@@ -15,9 +15,14 @@ document.getElementById('registerForm').addEventListener('submit', function(even
     var newUsername = document.getElementById('newUsername').value;
     var newPassword = document.getElementById('newPassword').value;
 
-    // проверяем, существует ли уже имя пользователя
+    // проверяем, существует ли уже имя пользователя и не пустой ли пароль
     if (registeredUsers[newUsername]) {
         alert('Имя пользователя "' + newUsername + '" уже занято. Пожалуйста, выберите другое имя.');
+        return;
+    }
+
+    if (!newPassword) {
+        alert('Вы не ввели пароль. Пожалуйста, введите пароль.');
         return;
     }
 
@@ -31,6 +36,17 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
 
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
+
+    // проверяем, существует ли имя пользователя и не пустой ли пароль
+    if (!registeredUsers[username]) {
+        alert('Неверное имя пользователя или пароль');
+        return;
+    }
+
+    if (!password) {
+        alert('Вы не ввели пароль. Пожалуйста, введите пароль.');
+        return;
+    }
 
     if (registeredUsers[username] && registeredUsers[username] === password) {
         if (username === 'admin') {
@@ -54,4 +70,16 @@ function registerUser(username, password) {
     users[username] = password; // новый пользователь в данные о пользователях
     localStorage.setItem('users', JSON.stringify(users));
     console.log('Пользователь успешно зарегистрирован.');
+}
+function deleteUser(username) {
+    if (registeredUsers[username]) {
+        delete registeredUsers[username];
+
+        let users = JSON.parse(localStorage.getItem('users'));
+        delete users[username];
+        localStorage.setItem('users', JSON.stringify(users));
+        alert('Пользователь "' + username + '" успешно удален.');
+    } else {
+        alert('Пользователь "' + username + '" не найден.');
+    }
 }
