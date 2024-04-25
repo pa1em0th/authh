@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif; /* шрифт */
+    font-family: Courier, monospace; /* шрифт */
     margin: 0; /* отступы по краям */
     padding: 0; /* внутренние отступы */
     background-color: #294b22; /* задний фон */
@@ -44,6 +44,10 @@ label {
     display: block;
     margin-bottom: 5px; 
 }
+label {
+    display: block;
+    margin-bottom: 5px;
+}
 
 input[type="text"],
 input[type="password"] {
@@ -54,7 +58,15 @@ input[type="password"] {
     border-radius: 10px; /* скругление углов */
 }
 
+input[type="text"] {
+    font-family: Courier, monospace;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddddddb2;
+    border-radius: 10px;
+}
 input[type="submit"] {
+    font-family: Courier, monospace;
     background-color: #4CAF50; /* цвет фона кнопки */
     color: white; /* цвет текста на кнопке */
     padding: 10px 20px; /* внутренние отступы */
@@ -63,6 +75,19 @@ input[type="submit"] {
     cursor: pointer;
 }
 
+button[type="submit"] {
+    font-family: Courier, monospace;
+    padding: 10px 20px;
+    background-color: #e23434;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #b32525;
+}
 input[type="submit"]:hover {
     background-color: #45a049; /* цвет фона кнопки отправки при наведении */
 }
