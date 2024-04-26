@@ -7,7 +7,7 @@ var administrator = {
 };
 
 // добавляем администратора в объект registeredUsers
-Object.assign(registeredUsers, administrator);
+registeredUsers['admin'] = 'password';
 
 document.getElementById('registerForm').addEventListener('submit', function(event) {
     event.preventDefault();
@@ -27,7 +27,6 @@ document.getElementById('registerForm').addEventListener('submit', function(even
     }
 
     registeredUsers[newUsername] = newPassword;
-    registerUser(newUsername, newPassword); // регистрируем нового пользователя
     alert('Новый пользователь зарегистрирован: ' + newUsername);
 });
 
@@ -52,7 +51,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         if (username === 'admin') {
             window.location.href = 'https://sdo.ket44.ru';
         } else {
-            window.location.href = 'https://sdo.ket44.ru';
+            // перенаправление для обычных пользователей
         }
     } else {
         alert('Неверное имя пользователя или пароль');
@@ -71,6 +70,7 @@ function registerUser(username, password) {
     localStorage.setItem('users', JSON.stringify(users));
     console.log('Пользователь успешно зарегистрирован.');
 }
+
 function deleteUser(username) {
     if (registeredUsers[username]) {
         delete registeredUsers[username];
