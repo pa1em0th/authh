@@ -85,3 +85,24 @@ function deleteUser(username) {
         alert('Пользователь "' + username + '" не найден.');
     }
 }
+ function updateDateTime() {
+        let date_ob = new Date();
+    
+        let date = ("0" + date_ob.getDate()).slice(-2);
+        let month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
+        let year = date_ob.getFullYear();
+        let hours = date_ob.getHours();
+        let minutes = date_ob.getMinutes();
+        let seconds = date_ob.getSeconds();
+    
+        let formattedDate = year + "-" + month + "-" + date;
+        let formattedTime = hours + ":" + minutes + ":" + seconds;
+    
+        document.getElementById('currentDate').textContent = formattedDate;
+        document.getElementById('currentTime').textContent = formattedTime;
+    }
+    
+    // Обновление даты и времени каждую секунду
+    setInterval(updateDateTime, 1000);
+
+window.onload = updateDateTime;
