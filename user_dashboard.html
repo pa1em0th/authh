@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Информация о поставщиках, моделях, клиентах и ценах</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .table-container {
+            width: 50%;
+            margin-left: auto; /* Располагаем контейнер таблицы справа */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid rgba(0, 0, 0, 0);
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #2e2e2e75;
+        }
+
+        /* Медиа-запросы для адаптации таблиц на разных устройствах */
+        @media (max-width: 768px) {
+            .table-container {
+                width: 100%;
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="table-container">
+        <h1>Информация о поставщиках</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Код фирмы</th>
+                    <th>Название фирмы</th>
+                    <th>Телефон</th>
+                    <th>E-mail</th>
+                    <th>Web-сайт</th>
+                </tr>
+            </thead>
+            <tbody id="suppliersTableBody">
+                <!-- Данные будут вставлены здесь через JavaScript -->
+            </tbody>
+        </table>
+
+        <h1>Информация о моделях</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Код модели</th>
+                    <th>Наименование модели</th>
+                    <th>Цвет</th>
+                    <th>Обивка</th>
+                    <th>Мощность двигателя</th>
+                    <th>Количество дверей</th>
+                    <th>Коробка передач</th>
+                    <th>Закупочная цена</th>
+                </tr>
+            </thead>
+            <tbody id="modelsTableBody">
+                <!-- Данные будут вставлены здесь через JavaScript -->
+            </tbody>
+        </table>
+
+        <h1>Информация о клиентах</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Ф.И.О. клиента</th>
+                    <th>Номер договора</th>
+                    <th>Дата покупки</th>
+                    <th>Телефон</th>
+                    <th>Адрес</th>
+                    <th>Код модели</th>
+                </tr>
+            </thead>
+            <tbody id="clientsTableBody">
+                <!-- Данные будут вставлены здесь через JavaScript -->
+            </tbody>
+        </table>
+
+        <h1>Информация о наценках</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Тип наценки</th>
+                    <th>Значение наценки</th>
+                </tr>
+            </thead>
+            <tbody id="markupsTableBody">
+                <!-- Данные будут вставлены здесь через JavaScript -->
+            </tbody>
+        </table>
+
+        <h1>Информация о ценах</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Код модели</th>
+                    <th>Год выпуска</th>
+                    <th>Цена</th>
+                </tr>
+            </thead>
+            <tbody id="priceListTableBody">
+                <!-- Данные будут вставлены здесь через JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- JavaScript для заполнения таблиц данными -->
+    <script src="data.js"></script>
+    <script src="populateTables.js"></script>
+</body>
+</html>

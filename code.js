@@ -15,15 +15,8 @@ document.getElementById('registerForm').addEventListener('submit', function(even
     var newUsername = document.getElementById('newUsername').value;
     var newPassword = document.getElementById('newPassword').value;
 
-    // проверяем, существует ли уже имя пользователя, не пустой ли пароль и не пустое ли имя пользователя
-    if (registeredUsers[newUsername] || !newPassword || !newUsername) {
-        if (!newUsername) {
-            alert('Вы не ввели имя пользователя. Пожалуйста, введите имя пользователя.');
-        } else if (!newPassword) {
-            alert('Вы не ввели пароль!');
-        } else {
-            alert('Имя пользователя "' + newUsername + '" уже занято. Пожалуйста, выберите другое имя.');
-        }
+    if (!newUsername || !newPassword || registeredUsers[newUsername]) {
+        alert(newUsername ? 'Имя пользователя "' + newUsername + '" уже занято. Пожалуйста, выберите другое имя.' : 'Вы не ввели имя пользователя. Пожалуйста, введите имя пользователя.');
         return;
     }
 
@@ -37,72 +30,37 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     var username = document.getElementById('username').value;
     var password = document.getElementById('password').value;
 
-    // проверяем, существует ли имя пользователя, не пустой ли пароль и не пустое ли имя пользователя
-    if (!registeredUsers[username] || !password || !username) {
-        if (!username) {
-            alert('Вы не ввели имя пользователя. Пожалуйста, введите имя пользователя.');
-        } else if (!password) {
-            alert('Вы не ввели пароль!');
-        } else {
-            alert('Неверное имя пользователя или пароль');
-        }
+    if (!username || !password || !registeredUsers[username] || registeredUsers[username] !== password) {
+        alert(username ? 'Неверное имя пользователя или пароль' : 'Вы не ввели имя пользователя. Пожалуйста, введите имя пользователя.');
         return;
     }
 
-    if (registeredUsers[username] && registeredUsers[username] === password) {
-        if (username === 'admin') {
-            window.location.href = 'https://sdo.ket44.ru';
-        } else {
-            // перенаправление для обычных пользователей
-        }
+    if (username === 'admin') {
+        window.location.href = 'https://sdo.ket44.ru';
     } else {
-        alert('Неверное имя пользователя или пароль');
+        window.open('user_dashboard.html', '_blank'); // Открытие нового окна для обычных пользователей
     }
 });
 
-// регистрация нового пользователя
-function registerUser(username, password) {
-    registeredUsers[username] = password; // добавление нового пользователя в объект registeredUsers
+document.getElementById('deleteUserForm').addEventListener('submit', function(event) {
+    event.preventDefault();
 
-    if (!localStorage.getItem('users')) {
-        localStorage.setItem('users', JSON.stringify({})); // хранилище пользователей в localStorage
+    var usernameToDelete = document.getElementById('usernameToDelete').value;
+
+    if (!usernameToDelete || !registeredUsers[usernameToDelete]) {
+        alert('Пользователь "' + usernameToDelete + '" не найден.');
+        return;
     }
-    let users = JSON.parse(localStorage.getItem('users')); // данные о пользователях из localStorage
-    users[username] = password; // новый пользователь в данные о пользователях
-    localStorage.setItem('users', JSON.stringify(users));
-    console.log('Пользователь успешно зарегистрирован.');
+
+    delete registeredUsers[usernameToDelete];
+    alert('Пользователь "' + usernameToDelete + '" успешно удален.');
+});
+
+function updateDateTime() {
+    var now = new Date();
+    document.getElementById('currentTime').textContent = now.toLocaleTimeString();
+    document.getElementById('currentDate').textContent = now.toLocaleDateString();
 }
 
-function deleteUser(username) {
-    if (registeredUsers[username]) {
-        delete registeredUsers[username];
-
-        let users = JSON.parse(localStorage.getItem('users'));
-        delete users[username];
-        localStorage.setItem('users', JSON.stringify(users));
-        alert('Пользователь "' + username + '" успешно удален.');
-    } else {
-        alert('Пользователь "' + username + '" не найден.');
-    }
-}
- function updateDateTime() {
-        let date_ob = new Date();
-    
-        let date = ("0" + date_ob.getDate()).slice(-2);
-        let month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
-        let year = date_ob.getFullYear();
-        let hours = date_ob.getHours();
-        let minutes = date_ob.getMinutes();
-        let seconds = date_ob.getSeconds();
-    
-        let formattedDate = year + "-" + month + "-" + date;
-        let formattedTime = hours + ":" + minutes + ":" + seconds;
-    
-        document.getElementById('currentDate').textContent = formattedDate;
-        document.getElementById('currentTime').textContent = formattedTime;
-    }
-    
-    // Обновление даты и времени каждую секунду
-    setInterval(updateDateTime, 1000);
-
-window.onload = updateDateTime;
+setInterval(updateDateTime, 1000);
+updateDateTime(); // Инициализация отображения времени и даты при загрузке страницы
