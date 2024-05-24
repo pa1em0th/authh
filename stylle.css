@@ -91,3 +91,55 @@ button[type="submit"]:hover {
 input[type="submit"]:hover {
     background-color: #45a049; /* цвет фона кнопки отправки при наведении */
 }
+
+.date-time-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+.date-time-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+/* Стили для элемента даты и времени */
+.date-time {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Общие стили для элементов даты и времени */
+#currentDate, #currentTime {
+    font-family: Courier, monospace;
+    font-size: 24px;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* Стили для элемента даты */
+#currentDate {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* Стили для элемента времени */
+#currentTime {
+    font-size: 32px;
+    padding: 10px;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+}
