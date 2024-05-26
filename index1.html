@@ -1,38 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
+    <meta charset="UTF-8">
     <title>Авторизация/Регистрация</title>
+    <link rel="stylesheet" href="stylle.css">
 </head>
 <body>
-    <h2>Авторизация пользователя</h2>
-    <link rel="stylesheet" href= "stylle.css">
-    <form id="loginForm">
+    <h2>Добро пожаловать</h2>
+    <link rel="stylesheet" href="stylle.css">
+    <form id="authForm">
         <label for="username">Введите логин:</label><br>
-        <input type="text" id="username" name="username"><br>
+        <input type="text" id="username" name="username" required><br>
         <label for="password">Введите пароль:</label><br>
-        <input type="password" id="password" name="password"><br>
-        <input type="submit" value="Вход">
+        <input type="password" id="password" name="password" required><br>
+        <button type="button" onclick="registerUser()">Зарегистрироваться</button>
+        <button type="button" onclick="loginUser()">Войти</button>
     </form>
 
-    <h2>Регистрация пользователя</h2>
-    <form id="registerForm">
-        <label for="newUsername">Придумайте логин:</label><br>
-        <input type="text" id="newUsername" name="newUsername"><br>
-        <label for="newPassword">Придумайте пароль:</label><br>
-        <input type="password" id="newPassword" name="newPassword"><br>
-        <input type="submit" value="Зарегистрироваться">
-    </form>
-    <br>
-    <form id="deleteUserForm">
-        <label for="usernameToDelete">Имя пользователя для удаления:</label>
-        <input type="text" id="usernameToDelete" name="usernameToDelete" required>
-        <button type="submit">Удалить пользователя</button>
-    </br>
-</form>
-<p><span id="currentTime"></span></p>
-<p><span id="currentDate"></span></p>
-    </form>
-    <script src= "code.js">
-    </script>
+    <p><span id="currentTime"></span></p>
+    <p><span id="currentDate"></span></p>
+
+    <script src="script.js"></script>
 </body>
 </html>
