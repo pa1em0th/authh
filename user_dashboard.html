@@ -13,7 +13,7 @@
 
         .table-container {
             width: 50%;
-            margin-left: auto; /* Располагаем контейнер таблицы справа */
+            margin-left: auto;
         }
 
         table {
@@ -31,7 +31,6 @@
             background-color: #2e2e2e75;
         }
 
-        /* Медиа-запросы для адаптации таблиц на разных устройствах */
         @media (max-width: 768px) {
             .table-container {
                 width: 100%;
@@ -54,7 +53,6 @@
                 </tr>
             </thead>
             <tbody id="suppliersTableBody">
-                <!-- Данные будут вставлены здесь через JavaScript -->
             </tbody>
         </table>
 
@@ -73,7 +71,7 @@
                 </tr>
             </thead>
             <tbody id="modelsTableBody">
-                <!-- Данные будут вставлены здесь через JavaScript -->
+           
             </tbody>
         </table>
 
@@ -90,7 +88,7 @@
                 </tr>
             </thead>
             <tbody id="clientsTableBody">
-                <!-- Данные будут вставлены здесь через JavaScript -->
+            
             </tbody>
         </table>
 
@@ -103,27 +101,26 @@
                 </tr>
             </thead>
             <tbody id="markupsTableBody">
-                <!-- Данные будут вставлены здесь через JavaScript -->
+            
             </tbody>
         </table>
 
-        <h1>O ценах</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>Модель</th>
-                    <th>Год выпуска</th>
-                    <th>Цена</th>
-                </tr>
-            </thead>
-            <tbody id="priceListTableBody">
-                <!-- Данные будут вставлены здесь через JavaScript -->
-            </tbody>
-        </table>
-    </div>
+<h1>O ценах</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Модель</th>
+            <th>Год выпуска</th>
+            <th>Цена</th>
+        </tr>
+    </thead>
+    <tbody id="priceListTableBody">
 
-    <!-- JavaScript для заполнения таблиц данными -->
-    <script src="data.js"></script>
-    <script src="populateTables.js"></script>
+    </tbody>
+</table>
+</div>
+
+<script src="data.js"></script>
+<script src="populateTables.js"></script>
 </body>
 </html>

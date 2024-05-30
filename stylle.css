@@ -58,7 +58,16 @@ input[type="password"] {
     border: 1px solid #ddddddb2; /* параметры рамки */
     border-radius: 10px; /* скругление углов */
 }
+.login-link {
+    font-family: Courier, monospace;
+    color: white; /* цвет текста на кнопке */
+    margin-right: 10px;
+    text-decoration: none;
+}
 
+.login-link:hover {
+    background-color: #2d2d2d;
+}
 button {
     font-family: Courier, monospace;
     background-color: #424242ac; /* цвет фона кнопки */
