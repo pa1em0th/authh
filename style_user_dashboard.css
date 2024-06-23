@@ -1,0 +1,78 @@
+@import 'style_index.css';
+
+body {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    background-image: url('autoo.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 30px;
+    border: 1px solid #333333;
+    border-radius: 8px;
+    background-color: #28282877;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#carSelect {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #444444;
+    border-radius: 5px;
+    background-color: #333333;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+#carDetails {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-top: 1px solid #444444;
+    padding-top: 20px;
+}
+
+.car-info, .car-photo {
+    width: 45%;
+}
+
+.car-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.car-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.car-photo img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+p {
+    margin: 0;
+    padding: 5px 0;
+    font-size: 1rem;
+}

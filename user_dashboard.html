@@ -1,126 +1,28 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
-    <title>Информация</title>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .table-container {
-            width: 50%;
-            margin-left: auto;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        th, td {
-            border: 1px solid rgba(0, 0, 0, 0);
-            padding: 8px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #2e2e2e75;
-        }
-
-        @media (max-width: 768px) {
-            .table-container {
-                width: 100%;
-                margin-left: 0;
-            }
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог автомобилей</title>
+    <link rel="stylesheet" href="style_user_dashboard.css">
 </head>
 <body>
-    <div class="table-container">
-        <h1>O поставщиках</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>Код фирмы</th>
-                    <th>Название фирмы</th>
-                    <th>Телефон</th>
-                    <th>E-mail</th>
-                    <th>Web-сайт</th>
-                </tr>
-            </thead>
-            <tbody id="suppliersTableBody">
-            </tbody>
-        </table>
-
-        <h1>O моделях</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>Модель</th>
-                    <th>Наименование модели</th>
-                    <th>Цвет</th>
-                    <th>Обивка</th>
-                    <th>Мощность двигателя</th>
-                    <th>Количество дверей</th>
-                    <th>Коробка передач</th>
-                    <th>Закупочная цена</th>
-                </tr>
-            </thead>
-            <tbody id="modelsTableBody">
-           
-            </tbody>
-        </table>
-
-        <h1>O клиентах</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>Ф.И.О. клиента</th>
-                    <th>Номер договора</th>
-                    <th>Дата покупки</th>
-                    <th>Телефон</th>
-                    <th>Адрес</th>
-                    <th>Модель</th>
-                </tr>
-            </thead>
-            <tbody id="clientsTableBody">
-            
-            </tbody>
-        </table>
-
-        <h1>O наценках</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>Тип наценки</th>
-                    <th>Значение наценки</th>
-                </tr>
-            </thead>
-            <tbody id="markupsTableBody">
-            
-            </tbody>
-        </table>
-
-<h1>O ценах</h1>
-<table>
-    <thead>
-        <tr>
-            <th>Модель</th>
-            <th>Год выпуска</th>
-            <th>Цена</th>
-        </tr>
-    </thead>
-    <tbody id="priceListTableBody">
-
-    </tbody>
-</table>
-</div>
-
-<script src="data.js"></script>
-<script src="populateTables.js"></script>
+    <div class="container">
+        <h2>Каталог автомобилей</h2>
+        <select id="carSelect">
+            <!-- Здесь будут вставляться опции для выбора марки автомобиля -->
+        </select>
+        <div id="carDetails" style="display: none;">
+            <div class="car-info">
+                <p id="carBrand"></p>
+                <p id="carManufacturer"></p>
+                <p id="carPrice"></p>
+            </div>
+            <div class="car-photo">
+                <img id="carPhoto" src="" alt="">
+            </div>
+        </div>
+    </div>
+    <script src="user.js"></script>
 </body>
 </html>

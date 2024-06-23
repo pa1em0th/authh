@@ -23,7 +23,7 @@ var registeredUsers = {};
                 // Авторизация администратора
                 isAdmin = true;
                 alert('Добро пожаловать, администратор!');
-                window.location.href = 'user_dashboard.html';
+                window.location.href = 'admin_dashboard.html';
                 return;
             }
 
