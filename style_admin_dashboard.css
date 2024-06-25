@@ -1,5 +1,5 @@
 body {
-    font-family: Courier, monospace; /* шрифт */
+    font-family: Courier, monospace; /* современный шрифт */
     background-color: #1a1a1a;
     color: #ffffff;
     background-image: url('background_user.jpg');
@@ -17,24 +17,23 @@ h1 {
     color: #ffffff;
     margin-bottom: 40px;
     text-align: center;
+    font-size: 2.5em; /* увеличенный размер шрифта */
 }
 
 table {
     width: 100%;
+    max-width: 800px; /* ограничение ширины таблицы */
     border-collapse: collapse;
     margin-bottom: 40px;
     font-size: 1rem;
-    width: 80%;
-    margin: 0 auto;
-    padding: 30px;
-    border: 1px solid #363636b4;
-    border-radius: 8px;
-    background-color: #28282877;
+    background-color: #28282862;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* округленные углы */
+    backdrop-filter: blur(3px);
 }
 
 th, td {
-    padding: 15px;
+    padding: 20px; /* увеличенный внутренний отступ */
     text-align: left;
     border-bottom: 1px solid #494949d8;
 }
@@ -42,7 +41,7 @@ th, td {
 th {
     background-color: #1b1b1bad;
     color: #ffffff;
-    font-weight: 500;
+    font-weight: 600; /* более жирный шрифт */
 }
 
 td {
@@ -51,25 +50,31 @@ td {
 
 input[type="text"], input[type="number"] {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
+    padding: 12px; /* увеличенный внутренний отступ */
+    margin-bottom: 15px;
     border: 1px solid #444444;
-    border-radius: 5px;
+    border-radius: 8px; /* округленные углы */
     background-color: #333333;
     color: #ffffff;
     font-family: 'Poppins', sans-serif;
+    transition: border-color 0.3s ease; /* плавный переход при изменении границы */
+}
+
+input:focus {
+    border-color: #ffffff; /* светлая граница при фокусе */
 }
 
 button {
     background-color: #424242ac;
     color: white;
-    padding: 10px 20px;
+    padding: 12px 24px; /* увеличенный внутренний отступ */
     border: none;
-    border-radius: 5px;
+    border-radius: 8px; /* округленные углы */
     cursor: pointer;
     margin-top: 20px;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
+    transition: background-color 0.3s ease; /* плавный переход цвета фона */
 }
 
 button:hover {
@@ -77,15 +82,15 @@ button:hover {
 }
 
 button.edit:hover {
-    background-color: #1a1a1a; /* Затемнение фона кнопки при наведении курсора */
+    background-color: #1a1a1a;
 }
 
 #editCell {
     color: #ffffff;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 #editCell:hover {
-    color: #cccccc; /* Затемнение текста при наведении курсора */
+    color: #cccccc;
 }

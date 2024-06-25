@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function() {
     logoutButton.addEventListener("click", function() {
         const shouldLogout = confirm("Вы уверены, что хотите выйти?");
         if (shouldLogout) {
-            window.location.href = "login.html";
+            window.location.href = "index.html";
         }
     });
 

@@ -1,26 +1,29 @@
-@import 'style_index.css';
 
 body {
-    background-color: #1a1a1a;
-    color: #ffffff;
+    font-family: Courier, monospace; /* современный шрифт */
+    margin: 0;
+    padding: 0;
+    background-color: #00000060;
     background-image: url('autoo.jpg');
-    background-size: cover;
-    background-position: center;
+    color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     min-height: 100vh;
+    background-size: cover;
 }
 
 .container {
     width: 80%;
+    max-width: 600px;
     margin: 0 auto;
     padding: 30px;
-    border: 1px solid #333333;
+    border: 1px solid #33333396;
     border-radius: 8px;
-    background-color: #28282877;
+    background-color: #28282894;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4px); /* добавление блюра */
 }
 
 h2 {
@@ -95,20 +98,22 @@ p {
     border: none;
     padding: 10px 20px;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 #logoutButton:hover {
     background-color: #333333a2;
 }
 #buyButton {
-    background-color: #007bff;
+    background-color: #000000b4;
     color: white;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
     margin-top: 20px;
+    border-radius: 5px;
 }
 
 #buyButton:hover {
-    background-color: #0056b3;
+    background-color: #222222bd;
 }

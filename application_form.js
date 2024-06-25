@@ -8,45 +8,62 @@ document.addEventListener("DOMContentLoaded", function() {
     // Очищаем localStorage после использования
     localStorage.removeItem("carModel");
 
-    document.addEventListener("DOMContentLoaded", function() {
-        const showLoginPopupButton = document.getElementById('showLoginPopup');
-        const loginPopup = document.getElementById('loginPopup');
-        const closeLoginPopup = document.querySelector('.close');
-        const loginForm = document.getElementById('loginForm');
-        const applicationForm = document.getElementById('applicationForm');
-    
-        // Получаем данные пользователей из localStorage
-        const registeredUsers = JSON.parse(localStorage.getItem('registeredUsers')) || {};
-    
-        showLoginPopupButton.addEventListener('click', function() {
-            loginPopup.style.display = 'block';
-        });
-    
-        closeLoginPopup.addEventListener('click', function() {
-            loginPopup.style.display = 'none';
-        });
-    
-        loginForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-            const username = document.getElementById('login').value;
-            const password = document.getElementById('password').value;
-    
-            if (!username || !password || !registeredUsers[username] || registeredUsers[username] !== password) {
-                alert('Неверное имя пользователя или пароль');
-                return;
-            }
-    
-            loginPopup.style.display = 'none';
-        });
-    
-        applicationForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-    
-            // Здесь должен быть код для отправки данных формы на сервер
-            // Например, можно использовать fetch или XMLHttpRequest
-    
-            // Выводим сообщение о результате в виде всплывающего окна
-            alert('Заявка успешно отправлена!');
-        });
+    const loginPopup = document.getElementById('loginPopup');
+    const closeLoginPopup = document.querySelector('.close');
+    const loginForm = document.getElementById('loginForm');
+    const applicationForm = document.getElementById('applicationForm');
+    const submitButton = document.querySelector('button[type="submit"]');
+
+    // Получаем данные пользователей из localStorage
+    const registeredUsers = JSON.parse(localStorage.getItem('registeredUsers')) || {};
+
+    closeLoginPopup.addEventListener('click', function() {
+        loginPopup.style.display = 'none';
+    });
+
+    loginForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const username = document.getElementById('login').value;
+        const password = document.getElementById('password').value;
+
+        if (!username || !password) {
+            alert('Логин и пароль обязательны для заполнения');
+            return;
+        }
+
+        if (!registeredUsers[username] || registeredUsers[username] !== password) {
+            alert('Неверное имя пользователя или пароль');
+            return;
+        }
+
+        loginPopup.style.display = 'none';
+
+        // Выводим сообщение о результате в виде всплывающего окна
+        alert('Заявка успешно отправлена!');
+
+        // Обновляем страницу
+        window.location.reload();
+    });
+
+    applicationForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // Открываем всплывающее окно перед отправкой заявки
+        loginPopup.style.display = 'block';
+
+        // Проверяем, заполнены ли логин и пароль
+        const username = document.getElementById('login').value;
+        const password = document.getElementById('password').value;
+
+        if (!username || !password) {
+            alert('Логин и пароль обязательны для заполнения перед отправкой заявки');
+            return;
+        }
+
+        // Здесь должен быть код для отправки данных формы на сервер
+        // Например, можно использовать fetch или XMLHttpRequest
+
+        // Выводим сообщение о результате в виде всплывающего окна
+        alert('Заявка успешно отправлена!');
     });
 });
