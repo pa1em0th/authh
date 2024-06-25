@@ -57,5 +57,47 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     populateCarSelect();
-    showCarDetails(carSelect.value); // Показать детали первого автомобиля по умолчанию
+    showCarDetails(carSelect.value); 
+});
+document.addEventListener("DOMContentLoaded", function() {
+    const logoutButton = document.getElementById("logoutButton");
+    const buyButton = document.getElementById("buyButton");
+
+    logoutButton.addEventListener("click", function() {
+        const shouldLogout = confirm("Вы уверены, что хотите выйти?");
+        if (shouldLogout) {
+
+            window.location.href = "index.html";
+        }
+    });
+
+    buyButton.addEventListener("click", function() {
+
+        window.location.href = "application_form.html";
+    });
+
+});
+document.addEventListener("DOMContentLoaded", function() {
+    const logoutButton = document.getElementById("logoutButton");
+    const buyButton = document.getElementById("buyButton");
+
+    logoutButton.addEventListener("click", function() {
+        const shouldLogout = confirm("Вы уверены, что хотите выйти?");
+        if (shouldLogout) {
+            window.location.href = "login.html";
+        }
+    });
+
+    buyButton.addEventListener("click", function() {
+        // Получаем модель автомобиля
+        const carModel = document.getElementById("carBrand").innerText;
+
+        // Сохраняем модель автомобиля в localStorage
+        localStorage.setItem("carModel", carModel);
+
+        // Перенаправляем на страницу с формой заявки
+        window.location.href = "application_form.html";
+    });
+
+    // Остальной код user.js
 });

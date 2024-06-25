@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма заявки на покупку автомобиля</title>
+    <link rel="stylesheet" href="style_application_form.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Форма заявки на покупку автомобиля</h2>
+        <form id="applicationForm">
+            <div class="form-group">
+                <label for="fullName">ФИО:</label>
+                <input type="text" id="fullName" name="fullName" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Телефон:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="carModel">Модель автомобиля:</label>
+                <input type="text" id="carModel" name="carModel" value="" readonly>
+            </div>
+            <button id="showLoginPopup">Ввести логин и пароль</button>
+            <button type="submit">Отправить заявку</button>
+        </form>
+    </div>
+    <div id="loginPopup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <h3>Введите логин и пароль</h3>
+            <form id="loginForm">
+                <input type="text" id="login" name="login" placeholder="Логин" required>
+                <input type="password" id="password" name="password" placeholder="Пароль" required>
+                <button type="submit">Подтвердить</button>
+            </form>
+        </div>
+    </div>
+    <script src="application_form.js"></script>
+</body>
+</html>

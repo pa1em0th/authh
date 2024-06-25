@@ -76,3 +76,39 @@ p {
     padding: 5px 0;
     font-size: 1rem;
 }
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#logoutButton {
+    background-color: #474747c0;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#logoutButton:hover {
+    background-color: #333333a2;
+}
+#buyButton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#buyButton:hover {
+    background-color: #0056b3;
+}
