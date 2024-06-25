@@ -21,10 +21,20 @@ body {
     width: 300px; /* ширина */
     margin: 0 auto;
     padding: 30px;
-    border: 1px solid #000000ad;
-    border-radius: 0px;
-    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #181818; /* светло-серая рамка */
+    border-radius: 5px; /* скругление углов */
+    background-color: rgba(48, 48, 48, 0.8);
     backdrop-filter: blur(5px);
+}
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #252525d8;
+    border-radius: 5px;
+    background-color: #3b3b3ba8;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
 }
 
 h2 {
@@ -42,7 +52,6 @@ form {
     background: linear-gradient(to bottom, #000000ce, #59595994); /* градиент */
 }
 
-
 label {
     color: #cccccc; /* светло-серый цвет текста меток */
     display: block;
@@ -55,9 +64,10 @@ input[type="password"] {
     width: 100%; /* ширина полей ввода */
     padding: 10px; /* внутренние отступы */
     margin-bottom: 10px; /* нижний отступ */
-    border: 1px solid #ddddddb2; /* параметры рамки */
+    border: 1px solid #dddddd; /* светло-серая рамка для полей ввода */
     border-radius: 10px; /* скругление углов */
 }
+
 .login-link {
     font-family: Courier, monospace;
     color: white; /* цвет текста на кнопке */
@@ -68,6 +78,7 @@ input[type="password"] {
 .login-link:hover {
     background-color: #2d2d2d;
 }
+
 button {
     font-family: Courier, monospace;
     background-color: #424242ac; /* цвет фона кнопки */

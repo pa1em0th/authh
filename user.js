@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const carPrice = document.getElementById("carPrice");
 
     let cars = JSON.parse(localStorage.getItem("cars")) || [
-        { photo: "car1.jpg", brand: "Toyota", manufacturer: "Japan", price: "20000" },
+        { photo: "car1.png", brand: "Toyota", manufacturer: "Japan", price: "20000" },
         { photo: "car2.jpg", brand: "Ford", manufacturer: "USA", price: "25000" },
         { photo: "car3.jpg", brand: "Honda", manufacturer: "Japan", price: "22000" },
         { photo: "car4.jpg", brand: "Chevrolet", manufacturer: "USA", price: "23000" },
