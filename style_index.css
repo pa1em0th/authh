@@ -61,11 +61,15 @@ label {
 
 input[type="text"],
 input[type="password"] {
-    width: 100%; /* ширина полей ввода */
-    padding: 10px; /* внутренние отступы */
-    margin-bottom: 10px; /* нижний отступ */
-    border: 1px solid #dddddd; /* светло-серая рамка для полей ввода */
-    border-radius: 10px; /* скругление углов */
+    width: 100%;
+    padding: 12px; /* увеличенный внутренний отступ */
+    margin-bottom: 15px;
+    border: 1px solid #444444ec;
+    border-radius: 8px; /* округленные углы */
+    background-color: #242424b7;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.3s ease; /* плавный переход при изменении границы */
 }
 
 .login-link {
@@ -109,8 +113,8 @@ button:hover {
 #currentTime {
     font-size: 32px;
     padding: 10px;
-    border: 2px solid #b6b6b6aa;
+    border: 2px solid #b6b6b66b;
     border-radius: 5px;
-    background-color: rgba(30, 30, 30, 0.1);
-    backdrop-filter: blur(5px);
+    background-color: rgba(30, 30, 30, 0.253);
+    backdrop-filter: blur(8px);
 }
