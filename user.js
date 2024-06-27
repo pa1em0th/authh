@@ -66,24 +66,6 @@ document.addEventListener("DOMContentLoaded", function() {
     logoutButton.addEventListener("click", function() {
         const shouldLogout = confirm("Вы уверены, что хотите выйти?");
         if (shouldLogout) {
-
-            window.location.href = "index.html";
-        }
-    });
-
-    buyButton.addEventListener("click", function() {
-
-        window.location.href = "application_form.html";
-    });
-
-});
-document.addEventListener("DOMContentLoaded", function() {
-    const logoutButton = document.getElementById("logoutButton");
-    const buyButton = document.getElementById("buyButton");
-
-    logoutButton.addEventListener("click", function() {
-        const shouldLogout = confirm("Вы уверены, что хотите выйти?");
-        if (shouldLogout) {
             window.location.href = "index.html";
         }
     });

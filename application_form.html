@@ -8,7 +8,7 @@
 </head>
 <body>
     <img src="logo.png" alt="Логотип" class="logo">
-    <button class="exit-button" onclick="redirectToIndex()">Выйти</button>
+    <button class="exit-button" onclick="confirmLogout()">Выйти</button>
     <div class="container">
         <h2>Форма заявки на покупку автомобиля</h2>
         <form id="applicationForm">
@@ -46,8 +46,10 @@
     </div>
     <script src="application_form.js"></script>
     <script>
-        function redirectToIndex() {
-            window.location.href = "index.html";
+        function confirmLogout() {
+            if (confirm('Вы уверены, что хотите выйти?')) {
+                window.location.href = "index.html";
+            }
         }
 
         document.getElementById('applicationForm').addEventListener('submit', function(event) {

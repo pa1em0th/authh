@@ -15,7 +15,7 @@
     </style>
 </head>
 <body>
-    <button class="exit-button">Выйти</button>
+    <button class="exit-button" onclick="confirmLogout()">Выйти</button>
     <h1>Административная панель</h1>
     <table id="carsTable">
         <tr>
@@ -27,6 +27,13 @@
         </tr>
     </table>
     <button onclick="saveChanges()">Сохранить изменения</button>
+    <script>
+        function confirmLogout() {
+            if (confirm('Вы уверены, что хотите выйти?')) {
+                window.location.href = "index.html";
+            }
+        }
+    </script>
     <script src="admin.js"></script>
 </body>
 </html>
