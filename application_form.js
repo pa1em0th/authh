@@ -66,4 +66,22 @@ document.addEventListener("DOMContentLoaded", function() {
         // Выводим сообщение о результате в виде всплывающего окна
         alert('Заявка успешно отправлена!');
     });
+    document.getElementById('applicationForm').addEventListener('submit', function(event) {
+        if (!document.getElementById('payment').checked) {
+            event.preventDefault();
+            alert('Для отправки заявки необходимо подтвердить оплату.');
+        }
+    });
+
+    document.getElementById('payment').addEventListener('change', function() {
+        if (this.checked) {
+            document.getElementById('paymentPopup').style.display = 'block';
+        } else {
+            document.getElementById('paymentPopup').style.display = 'none';
+        }
+    });
+
+    document.querySelector('.close').addEventListener('click', function() {
+        document.getElementById('paymentPopup').style.display = 'none';
+    });
 });

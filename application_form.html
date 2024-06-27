@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="style_application_form.css">
 </head>
 <body>
+    <img src="logo.png" alt="Логотип" class="logo">
+    <button class="exit-button" onclick="redirectToIndex()">Выйти</button>
     <div class="container">
         <h2>Форма заявки на покупку автомобиля</h2>
         <form id="applicationForm">
@@ -26,20 +28,46 @@
                 <label for="carModel">Модель автомобиля:</label>
                 <input type="text" id="carModel" name="carModel" value="" readonly>
             </div>
+            <div class="form-group">
+                <label for="payment">Оплата:</label>
+                <input type="checkbox" id="payment" name="payment">
+            </div>
             <button type="submit">Отправить заявку</button>
         </form>
     </div>
-    <div id="loginPopup" class="popup">
+    <div id="paymentPopup" class="popup">
         <div class="popup-content">
             <span class="close">&times;</span>
-            <h3>Введите логин и пароль</h3>
-            <form id="loginForm">
-                <input type="text" id="login" name="login" placeholder="Логин" required>
-                <input type="password" id="password" name="password" placeholder="Пароль" required>
-                <button type="submit">Подтвердить</button>
-            </form>
+            <p id="paymentStatus">Оплачено</p>
         </div>
     </div>
+    <div class="footer">
+        <p>© 2024 Автосалон. Все права защищены.</p>
+    </div>
     <script src="application_form.js"></script>
+    <script>
+        function redirectToIndex() {
+            window.location.href = "index.html";
+        }
+
+        document.getElementById('applicationForm').addEventListener('submit', function(event) {
+            if (!document.getElementById('payment').checked) {
+                event.preventDefault();
+                alert('Для отправки заявки необходимо подтвердить оплату.');
+            }
+        });
+
+        document.getElementById('payment').addEventListener('change', function() {
+            if (this.checked) {
+                document.getElementById('paymentPopup').style.display = 'block';
+            } else {
+                document.getElementById('paymentPopup').style.display = 'none';
+            }
+        });
+
+        document.querySelector('.close').addEventListener('click', function() {
+            document.getElementById('paymentPopup').style.display = 'none';
+        });
+    </script>
 </body>
 </html>
