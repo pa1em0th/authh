@@ -15,7 +15,7 @@
     </style>
 </head>
 <body>
-    <button class="exit-button" onclick="confirmLogout()">Выйти</button>
+    <button class="exit-button">Выйти</button>
     <h1>Административная панель</h1>
     <table id="carsTable">
         <tr>
@@ -27,11 +27,50 @@
         </tr>
     </table>
     <button onclick="saveChanges()">Сохранить изменения</button>
+    <h1>Список пользователей</h1>
+    <table id="usersTable">
+        <tr>
+            <th>Логин</th>
+            <th>Пароль</th>
+            <th>Действия</th>
+        </tr>
+    </table>
     <script>
         function confirmLogout() {
             if (confirm('Вы уверены, что хотите выйти?')) {
                 window.location.href = "index.html";
             }
+        }
+
+        function renderUsersTable() {
+            const registeredUsers = JSON.parse(localStorage.getItem('registeredUsers')) || {};
+            const table = document.getElementById('usersTable');
+            table.innerHTML = '<tr><th>Логин</th><th>Пароль</th><th>Действия</th></tr>';
+            for (const username in registeredUsers) {
+                const row = table.insertRow();
+                row.insertCell().innerText = username;
+                // Заменяем пароль на символы для защиты конфиденциальной информации
+                row.insertCell().innerText = '*'.repeat(registeredUsers[username].length);
+                const deleteCell = row.insertCell();
+                const deleteButton = document.createElement('button');
+                deleteButton.innerText = 'Удалить';
+                deleteButton.onclick = () => deleteUser(username);
+                deleteCell.appendChild(deleteButton);
+            }
+        }
+
+        function deleteUser(username) {
+            let registeredUsers = JSON.parse(localStorage.getItem('registeredUsers')) || {};
+            if (registeredUsers[username]) {
+                delete registeredUsers[username];
+                localStorage.setItem('registeredUsers', JSON.stringify(registeredUsers));
+                renderUsersTable();
+            }
+        }
+
+        // Проверяем, есть ли данные в локальном хранилище и рендерим таблицу
+        if (localStorage.getItem('registeredUsers')) {
+            renderUsersTable();
         }
     </script>
     <script src="admin.js"></script>
