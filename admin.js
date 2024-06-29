@@ -110,12 +110,6 @@ document.addEventListener("DOMContentLoaded", function() {
         localStorage.setItem("cars", JSON.stringify(cars));
         alert("Таблица сброшена к исходному виду");
     }
-
-    const resetButton = document.createElement("button");
-    resetButton.textContent = "Сбросить";
-    resetButton.onclick = resetTable;
-    document.body.appendChild(resetButton);
-
     populateTable();
 
     window.addEventListener('beforeunload', function (e) {

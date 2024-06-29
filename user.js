@@ -81,5 +81,4 @@ document.addEventListener("DOMContentLoaded", function() {
         window.location.href = "application_form.html";
     });
 
-    // Остальной код user.js
 });

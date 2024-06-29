@@ -15,7 +15,7 @@
     </style>
 </head>
 <body>
-    <button class="exit-button">Выйти</button>
+    <button class="exit-button" onclick="confirmLogout()">Выйти</button>
     <h1>Административная панель</h1>
     <table id="carsTable">
         <tr>
@@ -26,7 +26,10 @@
             <th>Действия</th>
         </tr>
     </table>
-    <button onclick="saveChanges()">Сохранить изменения</button>
+    <div>
+        <button onclick="saveChanges()">Сохранить изменения</button>
+        <button onclick="resetChanges()">Сбросить</button>
+    </div>
     <h1>Список пользователей</h1>
     <table id="usersTable">
         <tr>
@@ -40,6 +43,16 @@
             if (confirm('Вы уверены, что хотите выйти?')) {
                 window.location.href = "index.html";
             }
+        }
+
+        function saveChanges() {
+            // Логика сохранения изменений
+            alert('Изменения сохранены!');
+        }
+
+        function resetChanges() {
+            // Логика сброса изменений
+            alert('Изменения сброшены!');
         }
 
         function renderUsersTable() {

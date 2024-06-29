@@ -16,7 +16,6 @@ body {
     align-items: center; /* центрирование по вертикали */
     flex-direction: column; /* элементы будут расположены в столбец */
 }
-
 .container {
     width: 300px; /* ширина */
     margin: 0 auto;
